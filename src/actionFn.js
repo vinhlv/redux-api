@@ -130,9 +130,9 @@ export default function actionFn(url, name, options, ACTIONS={}, meta={}) {
       const { dispatch, getState } = middlewareParser(...middlewareArgs);
       const state = getState();
       const isLoading = get(state, meta.prefix, meta.reducerName, "loading");
-      if (isLoading) {
-        return;
-      }
+//       if (isLoading) {
+//         return;
+//       }
       const requestOptions = { pathvars, params };
       const prevData =  get(state, meta.prefix, meta.reducerName, "data");
       dispatch({ type: actionFetch, syncing, request: requestOptions });
